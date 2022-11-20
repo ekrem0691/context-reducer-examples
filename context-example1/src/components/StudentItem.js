@@ -9,6 +9,9 @@ const { students ,setStudents} = useContext(StudentContext);
 
 console.log("neresi");
 const changeColor = ( id,  color) => {
+
+  setStudents(students.map((student)=> student.id === id ? { ...student, color:color }: student ))
+
 }
  
   return (

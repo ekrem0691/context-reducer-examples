@@ -2,18 +2,15 @@ import { useContext } from 'react';
 import { StudentContext } from '../context/StudentContext';
 
 const StudentItem = ({ student }) => {
-  const { id, name, age, color, email } = student;
+  const { id, name, age, color, email, } = student;
+console.log(student);
+  
+const { students ,setStudents} = useContext(StudentContext);
 
-  // const { students, setStudents } = useContext(StudentContext);
-  const { changeColor } = useContext(StudentContext);
-
-  // const changeColor = (id, color) => {
-  //   setStudents(
-  //     students.map((student) =>
-  //       student.id === id ? { ...student, color: color } : student
-  //     )
-  //   );
-  // };
+console.log("neresi");
+const changeColor = ( id,  color) => {
+}
+ 
   return (
     <div
       style={{
@@ -31,7 +28,7 @@ const StudentItem = ({ student }) => {
         type="text"
         name="color"
         value={color}
-        onChange={(e) => changeColor(id, e.target.value)}
+        onChange={(e)=> changeColor(id, e.target.value )}
       />
     </div>
   );

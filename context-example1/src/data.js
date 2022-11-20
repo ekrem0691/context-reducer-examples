@@ -4,7 +4,7 @@ const data = [
     name: 'Jason Response',
     email: 'jason@mail.com',
     age: 23,
-    color: 'lightgreen',
+    color: 'lightblue',
   },
   {
     id: 2,
@@ -19,6 +19,13 @@ const data = [
     email: 'malcolm@mail.com',
     age: 21,
     color: 'mistyrose',
+  },
+  {
+    id: 3,
+    name: 'Familia Function',
+    email: 'familia@mail.com',
+    age: 21,
+    color: 'lightgreen',
   },
 ];
 export default data;

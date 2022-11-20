@@ -3,17 +3,18 @@ import { StudentContext } from '../context/StudentContext';
 
 const StudentItem = ({ student }) => {
   const { id, name, age, color, email, } = student;
-console.log(student);
-  
-const { students ,setStudents} = useContext(StudentContext);
+  console.log(student);
 
-console.log("neresi");
-const changeColor = ( id,  color) => {
+  // const { students, setStudents } = useContext(StudentContext);
+  const {changeColor } = useContext(StudentContext);
 
-  setStudents(students.map((student)=> student.id === id ? { ...student, color:color }: student ))
+  console.log("neresi");
 
-}
- 
+
+  // const changeColor = (id, color) => {
+  //   setStudents(students.map((student) => student.id === id ? { ...student, color: color } : student))
+  // }
+
   return (
     <div
       style={{
@@ -31,7 +32,7 @@ const changeColor = ( id,  color) => {
         type="text"
         name="color"
         value={color}
-        onChange={(e)=> changeColor(id, e.target.value )}
+        onChange={(e) => changeColor( id, e.target.value)}
       />
     </div>
   );

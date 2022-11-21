@@ -1,9 +1,21 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
 import { useState, useEffect } from "react";
 
 //? 1.) Defining;
 
 export const UserContext = createContext();
+
+
+
+//? 3.) Consume function;
+
+//? (Custom Hook)==> Bir Hook return ediliyora kendiside Hook olmuş oluyor.. Ve bu method "use" ile başlamalıdır.. 
+
+export const useUserContext = ()=>{
+  return  useContext(UserContext);
+}
+
+
 
 //? 2.) Provider Component;
 
@@ -16,13 +28,15 @@ const UserContextProvider = ({ children }) => {
       .then((data) => setUsers(data));
   }, []);
 
-  const changeWidht = (id, width) => {
+  const changeWidth = (id, width) => {
     setUsers(users.map((user) => (user.id === id ? { ...user, width } : user)));
   };
 
-  const values = { users, changeWidht };
+  const values = { users, changeWidth };
 
   return <UserContext.Provider value={values}>{children}</UserContext.Provider>;
 };
 
 export default UserContextProvider;
+
+

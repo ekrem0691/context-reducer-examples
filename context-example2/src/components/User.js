@@ -4,6 +4,7 @@ const User = ({ user }) => {
   const { id, login, avatar_url, width } = user;
 
   const { changeWidth } = useUserContext();
+  
   return (
     <div>
       <h3>{login}</h3>

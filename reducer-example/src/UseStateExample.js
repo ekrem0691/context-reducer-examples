@@ -6,6 +6,7 @@ const UseStateExample = () => {
   const [loading, setLoading] = useState(false);
 
   const fetchDog = () => {
+
     setLoading(true);
     fetch("https://dog.ceo/api/breeds/image/random")
       .then((res) => res.json())
@@ -18,6 +19,9 @@ const UseStateExample = () => {
         setLoading(false);
       });
   };
+
+  
+
   return (
     <div
       style={{

@@ -22,11 +22,14 @@ export const useUserContext = ()=>{
 const UserContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
 
+  console.log("ekrem");
+
   useEffect(() => {
     fetch("https://api.github.com/users")
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
+
 
   const changeWidth = (id, width) => {
     setUsers(users.map((user) => (user.id === id ? { ...user, width } : user)));

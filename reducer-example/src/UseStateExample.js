@@ -5,13 +5,16 @@ const UseStateExample = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const fetchDog = () => {
 
+
+  const fetchDog = () => {
+    console.log("buton çalıştı");
     setLoading(true);
     fetch("https://dog.ceo/api/breeds/image/random")
-      .then((res) => res.json())
-      .then((data) => {
+    .then((res) => res.json())
+    .then((data) => {
         setDog(data.message);
+        console.log("Api den veri geldi");
         setLoading(false);
       })
       .catch(() => {
@@ -20,8 +23,7 @@ const UseStateExample = () => {
       });
   };
 
-  
-
+  console.log("render")
   return (
     <div
       style={{

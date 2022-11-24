@@ -12,7 +12,9 @@ const UserReducerExample = () => {
 
   const [state, dispatch ]= useReducer(reducer,initialState);
 
+console.log(state)
 
+const {loading, error, dog} = state;
 
   const fetchDog = () => {
     console.log("buton çalıştı");

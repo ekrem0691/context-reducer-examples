@@ -8,11 +8,16 @@ export const initialState = {
 
 export const reducer = (state, action)=> {
 
-  switch (key) {
-    case value:
+  switch (action.type) {
+    case "START":
+      return{...state, dog:"", error:"", loading:true }
+    case "SUCCESS":
+      return{...state, dog: action.payload, error:"", loading:false }
       
-      break;
-  
+    case "FAIL":
+      return{...state, dog:"", error: action.payload , loading:false }
+      
+
     default:
       break;
   }
